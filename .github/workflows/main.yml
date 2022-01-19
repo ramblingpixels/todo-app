@@ -1,0 +1,28 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: gh pages publish
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - name: publish package
+        run: |
+          npm install
+          git config user.name "ramblingpixels"
+          git config user.email "siddhant.jain0607@gmail.com"
+          git remote set-url origin https://ramblingpixels:${{secrets.ACCESS_TOKEN}}@github.com/ramblingpixels/todo-app
+          npm run deploy
+
+  
