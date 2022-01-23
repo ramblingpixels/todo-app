@@ -3,7 +3,6 @@ import React from 'react';
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
     const inputTextHandler = (e) => {
-        console.log(e.target.value);
         setInputText(e.target.value);
     }
 
@@ -11,7 +10,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
         e.preventDefault();
         // console.log(todos);
         setTodos([
-            ...todos, { text: inputText, completed: false, id: 100}
+            ...todos, { text: inputText, completed: false, id: Math.random() * 1000}
         ])
         // setTodos([]);
         // let arr = todos;
