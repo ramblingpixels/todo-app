@@ -9,15 +9,15 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
     const submitTodoHandler = (e) => {
         e.preventDefault();
-        console.log(todos);
-        // setTodos([
-        //     ...todos, { text: inputText, completed: false, id: 100}
-        // ])
+        // console.log(todos);
+        setTodos([
+            ...todos, { text: inputText, completed: false, id: 100}
+        ])
         // setTodos([]);
-        let arr = todos;
-        arr.push({text: inputText, completed: false, id: 100});
-        setTodos(arr);
-        console.log(todos);
+        // let arr = todos;
+        // arr.push({text: inputText, completed: false, id: 100});
+        // setTodos(arr);
+        // console.log(todos);
         setInputText("");
     }
 
