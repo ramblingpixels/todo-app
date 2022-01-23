@@ -9,9 +9,12 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
     const submitTodoHandler = (e) => {
         // e.preventDefault();
-        setTodos([
-            ...todos, { text: inputText, completed: false, id: 100}
-        ])
+        console.log(todos);
+        // setTodos([
+        //     ...todos, { text: inputText, completed: false, id: 100}
+        // ])
+        setTodos([]);
+        console.log(todos);
         setInputText("");
     }
 
