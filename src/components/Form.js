@@ -13,7 +13,10 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
         // setTodos([
         //     ...todos, { text: inputText, completed: false, id: 100}
         // ])
-        setTodos([]);
+        // setTodos([]);
+        let arr = todos;
+        arr.push({text: inputText, completed: false, id: 100});
+        setTodos(arr);
         console.log(todos);
         setInputText("");
     }
